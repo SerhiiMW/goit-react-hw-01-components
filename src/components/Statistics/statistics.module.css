@@ -1,0 +1,27 @@
+
+
+.statistics {
+    margin-top: 20px;
+}
+.statList {
+list-style: none;
+display: flex;
+}
+.item {
+display: flex;
+flex-direction: column;
+text-align: center;
+justify-content: center;
+gap: 8px;
+height: 60px;
+width: 60px;
+border: 1px solid;
+}
+.percentage {
+font-size: 20px;
+}
+.title {
+text-align: center;
+font-size: 50px;
+font-weight: 600;
+}
