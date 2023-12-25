@@ -10,7 +10,6 @@ function Users() {
         <p className={styles.tag}>{user.tag}</p>
         <p className={styles.location}>{user.location}</p>
       </div>
-
       <ul className={styles.stats}>
         <li className={styles.list}>
           <span className={styles.label}>Followers</span>

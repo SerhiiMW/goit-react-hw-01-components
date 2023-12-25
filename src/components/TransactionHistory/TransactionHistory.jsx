@@ -1,35 +1,33 @@
 import transactions from '../../data/transactions.json';
 import styles from './transaction.module.css';
 
-
-const TransactionHistory = ({ items = [] }) => {
-<TransactionHistory items={transactions} />;
-  const elements = items.map(item => (
-    <tr key={item.id}>
-      <td>{item.type}</td>,
-      <td>{item.amount}</td>,
-      <td>{item.currency}</td>,
+const Transaction = ({ items }) => {
+  return items.map(item => (
+    <tr key = {item.id} >
+      <td className={styles.transaction}>{item.type}</td>
+      <td className={styles.transaction}>{item.amount}</td>
+      <td className={styles.transaction}>{item.currency}</td>
     </tr>
   ));
-  console.log({elements})
-  return (
-    <table className={styles.transactionHistory}>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
-        </tr>
-      </thead>
+};
 
-      <tbody>
-        {elements}
-      </tbody>
-    </table>
+const TransactionHistory = () => {
+  return (
+    <div className={styles.transactionWrapper}>
+      <table className={styles.transactionHistory}>
+        <thead>
+          <tr>
+            <th className={styles.transactionTitle}>Type</th>
+            <th className={styles.transactionTitle}>Amount</th>
+            <th className={styles.transactionTitle}>Currency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <Transaction items={transactions} />
+        </tbody>
+      </table>
+    </div>
   );
 };
 
-
-
 export default TransactionHistory;
-

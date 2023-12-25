@@ -1,6 +1,10 @@
 @import-normalize;
 
-.App {
-    margin-left: 20px;
-    list-style: none;
+.app {
+  margin-left: 20px;
+  list-style: none;
+  /* display: flex;
+  flex-direction: column;
+  gap: 15px; */
 }
+
