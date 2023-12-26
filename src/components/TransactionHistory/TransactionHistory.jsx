@@ -11,7 +11,7 @@ const Transaction = ({ items }) => {
   ));
 };
 
-const TransactionHistory = () => {
+const TransactionHistory = ( { id, type, amount, currency } ) => {
   return (
     <div className={styles.transactionWrapper}>
       <table className={styles.transactionHistory}>

@@ -3,7 +3,7 @@ import FriendListItem from "./FriendListItem";
 import './friend.css'
 
 
-const FriendList = () => {
+const FriendList = ( {id, isOnline, avatar, name} ) => {
     return (
         <div className='friendWrapper'>
             <ul className='friendList'>

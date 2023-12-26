@@ -15,7 +15,7 @@ const StatisticsList = ({ items }) => {
   );
 };
 
-const Statistics = () => {
+const Statistics = (title, { id, label, percentage } ) => {
   return (
     <div className={styles.statistics}>
     <section className={styles.statisticsSection}>
