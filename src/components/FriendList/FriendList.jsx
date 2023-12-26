@@ -1,16 +1,16 @@
-import friends from '../../data/friends.json';
 import FriendListItem from "./FriendListItem";
 import './friend.css'
 
 
-const FriendList = ( {id, isOnline, avatar, name} ) => {
+const FriendList = ( { friends } ) => {
     return (
         <div className='friendWrapper'>
             <ul className='friendList'>
-                <FriendListItem items={friends} />
+            {friends.map(friend => 
+                <FriendListItem key={friend.id} isOnline={friend.isOnline} avatar={friend.avatar} name={friend.name}  />
+            )}   
             </ul>
         </div>
-    )
-}
+ )}
 
 export default FriendList;

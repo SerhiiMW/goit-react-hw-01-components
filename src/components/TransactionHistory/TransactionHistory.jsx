@@ -1,17 +1,6 @@
-import transactions from '../../data/transactions.json';
 import styles from './transaction.module.css';
 
-const Transaction = ({ items }) => {
-  return items.map(item => (
-    <tr key = {item.id} >
-      <td className={styles.transaction}>{item.type}</td>
-      <td className={styles.transaction}>{item.amount}</td>
-      <td className={styles.transaction}>{item.currency}</td>
-    </tr>
-  ));
-};
-
-const TransactionHistory = ( { id, type, amount, currency } ) => {
+const TransactionHistory = ({ items }) => {
   return (
     <div className={styles.transactionWrapper}>
       <table className={styles.transactionHistory}>
@@ -23,7 +12,13 @@ const TransactionHistory = ( { id, type, amount, currency } ) => {
           </tr>
         </thead>
         <tbody>
-          <Transaction items={transactions} />
+        {items.map(item => (
+          <tr key={item.id}>
+            <td className={styles.transaction}>{item.type}</td>
+            <td className={styles.transaction}>{item.amount}</td>
+            <td className={styles.transaction}>{item.currency}</td>
+          </tr>
+        ))}
         </tbody>
       </table>
     </div>

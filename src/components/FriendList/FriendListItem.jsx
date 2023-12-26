@@ -1,19 +1,17 @@
 import './friend.css'
 
-const FriendListItem = ({ items }) => {
+const FriendListItem = ({ isOnline, avatar, name }) => {
   return (
     <>
-    {items.map(item => (
-    <li className='friendListItem' key={item.id}>
-      <span className = {`${item.isOnline}`} ></span >
+    <li className='friendListItem'>
+      <span className = {`${isOnline}`} ></span >
       <img className='avatar'
-        src={item.avatar}
+        src={avatar}
         alt="User avatar"
         width="48"
       />
-      <p className='friendName'>{item.name}</p>
+      <p className='friendName'>{name}</p>
     </li>
-    ))}
     </>
   );
 };
